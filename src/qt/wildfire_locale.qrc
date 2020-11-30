@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/wildfire_ar.qm</file>
+        <file alias="bg">locale/wildfire_bg.qm</file>
+        <file alias="de">locale/wildfire_de.qm</file>
+        <file alias="en">locale/wildfire_en.qm</file>
+        <file alias="es">locale/wildfire_es.qm</file>
+        <file alias="fi">locale/wildfire_fi.qm</file>
+        <file alias="fr">locale/wildfire_fr.qm</file>
+        <file alias="it">locale/wildfire_it.qm</file>
+        <file alias="ja">locale/wildfire_ja.qm</file>
+        <file alias="ko">locale/wildfire_ko.qm</file>
+        <file alias="nl">locale/wildfire_nl.qm</file>
+        <file alias="pl">locale/wildfire_pl.qm</file>
+        <file alias="pt">locale/wildfire_pt.qm</file>
+        <file alias="ru">locale/wildfire_ru.qm</file>
+        <file alias="sk">locale/wildfire_sk.qm</file>
+        <file alias="sv">locale/wildfire_sv.qm</file>
+        <file alias="th">locale/wildfire_th.qm</file>
+        <file alias="tr">locale/wildfire_tr.qm</file>
+        <file alias="vi">locale/wildfire_vi.qm</file>
+        <file alias="zh_CN">locale/wildfire_zh_CN.qm</file>
+        <file alias="zh_TW">locale/wildfire_zh_TW.qm</file>
+    </qresource>
+</RCC>

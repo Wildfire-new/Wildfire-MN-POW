@@ -1,0 +1,6 @@
+usr/local/bin/wildfire-qt usr/bin
+share/pixmaps/wildfire32.xpm usr/share/pixmaps
+share/pixmaps/wildfire16.xpm usr/share/pixmaps
+share/pixmaps/wildfire128.png usr/share/pixmaps
+debian/wildfire-qt.desktop usr/share/applications
+debian/wildfire-qt.protocol usr/share/kde4/services/
