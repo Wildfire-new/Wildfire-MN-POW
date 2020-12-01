@@ -14,6 +14,13 @@ Run the following commands to install required packages:
 ```bash
 $ sudo apt-get install curl build-essential libtool autotools-dev automake pkg-config python3 bsdmainutils cmake
 ```
+$ cd depends
+$ make -j4 # Choose a good -j value, depending on the number of CPU cores available
+$ cd ..
+$ ./autogen.sh
+$ ./configure --prefix=`pwd`/depends/<host>
+$ make
+$ make install # optional
 
 ##### Fedora:
 ```bash
