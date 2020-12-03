@@ -169,6 +169,17 @@ cd build_unix/
 make
 sudo make install
 ```
+```
+wget https://fukuchi.org/works/qrencode/qrencode-4.0.0.tar.gz
+tar zxvf qrencode-4.0.0.tar.gz
+cd qrencode-4.0.0/
+./configure
+make
+sudo make install
+sudo ldconfig
+
+sudo apt install libssl1.0-dev
+```
 Configure environment variable.
 ```
 export LD_LIBRARY_PATH="/usr/local/lib"
