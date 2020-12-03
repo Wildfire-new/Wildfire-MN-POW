@@ -151,3 +151,41 @@ $ ./autogen.sh
 $ ./configure --prefix=<prefix> CC=egcc CXX=eg++ CPP=ecpp
 $ gmake # do not use -jX, this is broken
 ```
+
+Building PI-Qt Wallet
+
+Install the required dependencies.
+```
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libboost-all-dev libboost-program-options-dev
+sudo apt-get install libminiupnpc-dev libzmq3-dev libprotobuf-dev protobuf-compiler unzip software-properties-common
+```
+Install Berkeley DB from source code.
+```
+wget https://download.oracle.com/berkeley-db/db-4.8.30.zip
+unzip db-4.8.30.zip
+cd db-4.8.30
+cd build_unix/
+../dist/configure --prefix=/usr/local --enable-cxx
+make
+sudo make install
+```
+Configure environment variable.
+```
+export LD_LIBRARY_PATH="/usr/local/lib"
+```
+Open your wallet, and make sure your wallet is connected with a node.
+Your wallet is connected when you see the icon Wallet connections X11 in the lower right corner of your wallet.
+
+The message “Syncing Headers (0,0%)” will disappear once you mine your first block.
+
+Close your wallet and create the file wildfire.conf in the folder “$HOME/.wildfire/”.
+
+Paste the following text into wildfire.conf and save the file.
+```
+rpcuser=rpc_wildfire
+rpcpassword=242330dec2e672403a85b387c
+rpcallowip=127.0.0.1
+rpcport=25571
+listen=1
+server=1
+```
