@@ -12,9 +12,7 @@ Target spacing 	3 minutes
 Target timespan 	60 minutes
 Transaction confirmations 	12 blocks
 
-Node 1 	
-144.91.90.160
-Node 2 	161.97.122.124
+
 
 Last block with reward 	6930000
 Time until last block 	39 years, 6 months, 11 days, 12 hours
