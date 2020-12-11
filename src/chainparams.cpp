@@ -317,6 +317,8 @@ public:
 
         vSeeds.push_back(CDNSSeedData("144.91.90.160", "144.91.90.160"));
         vSeeds.push_back(CDNSSeedData("161.97.122.124", "161.97.122.124"));
+	vSeeds.emplace_back("vps.wdf-seeder.com";true)
+	vSeeds.emplace_back("s1.wdf-seeder.net";true)	
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,73);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,74);
