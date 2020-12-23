@@ -15,13 +15,19 @@ Run the following commands to install required packages:
 $ sudo apt-get install curl build-essential libtool autotools-dev automake pkg-config python3 bsdmainutils cmake
 ```
 ```
-$ cd depends
-$ make -j4 # Choose a good -j value, depending on the number of CPU cores available
-$ cd ..
 $ ./autogen.sh
-$ ./configure --prefix=`pwd`/depends/<host>
+$ ./configure --prefix=pwd/depends/<host>
 $ make
-$ make install # optional 
+$ make install # optional
+Please replace <host> with your local system's host-platform-triplet. The following triplets are usually valid:
+
+i686-pc-linux-gnu for Linux32
+x86_64-pc-linux-gnu for Linux64
+i686-w64-mingw32 for Win32
+x86_64-w64-mingw32 for Win64
+x86_64-apple-darwin11 for MacOSX
+arm-linux-gnueabihf for Linux ARM 32 bit
+aarch64-linux-gnu for Linux ARM 64 bit
 ```
 
 ##### Fedora:
