@@ -18,6 +18,8 @@ $ sudo apt-get install curl build-essential libtool autotools-dev automake pkg-c
 $ chmod +x configure libtool autogen.sh
 $ cd depends
 $chmod +x config.guess config.sub
+$ cd share
+$ chmod 755 genbuild.sh
 $ ./autogen.sh 
 $ ./configure --prefix=pwd/depends/<host>
 $ make
