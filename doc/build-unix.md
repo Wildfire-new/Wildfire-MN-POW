@@ -11,11 +11,12 @@ Building the dependencies and Wildfire Core requires some essential build tools 
 Run the following commands to install required packages:
 
 ##### Debian/Ubuntu:
-```bash
+```bash 
 $ sudo apt-get install curl build-essential libtool autotools-dev automake pkg-config python3 bsdmainutils cmake
 ```
 ```
-$ ./autogen.sh
+$ chmod +x configure libtool
+$ ./autogen.sh autogen.sh
 $ ./configure --prefix=pwd/depends/<host>
 $ make
 $ make install # optional
