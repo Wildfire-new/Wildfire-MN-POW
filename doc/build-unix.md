@@ -14,6 +14,16 @@ Run the following commands to install required packages:
 ```bash 
 $ sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 curl libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libboost-all-dev libboost-program-options-dev libminiupnpc-dev libzmq3-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev unzip doxygen cmake libgmp3-dev
 ```
+
+Swappfile
+```
+ dd if=/dev/zero of=/var/swapfile bs=2048 count=1048576
+    mkswap /var/swapfile
+    swapon /var/swapfile
+    chmod 0600 /var/swapfile
+    chown root:root /var/swapfile
+    echo "/var/swapfile none swap sw 0 0" >> /etc/fstab
+```
 Install Berkeley DB.
 
 ```
