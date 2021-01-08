@@ -1,5 +1,5 @@
 #! /bin/bash
-# Generated automatically by config.status (wildfirecore) 1.0.0
+# Generated automatically by config.status (wildfirecore) 1.1.1
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 
 # Provide generalized library-building support services.
@@ -65,8 +65,8 @@ ECHO="printf %s\\n"
 PATH_SEPARATOR=":"
 
 # The host system.
-host_alias=x86_64-w64-linux
-host=x86_64-w64-linux-gnu
+host_alias=x86_64-pc-linux-gnu
+host=x86_64-pc-linux-gnu
 host_os=linux-gnu
 
 # The build system.
@@ -161,7 +161,7 @@ old_postuninstall_cmds=""
 lock_old_archive_extraction=no
 
 # A C compiler.
-LTCC="/home/administrator/walletbuilders/build_environment/dash/0.14.0.2/depends/x86_64-w64-linux/share/../native/bin/ccache gcc -m64"
+LTCC="/root/Wildfire-MN-POW-main/depends/x86_64-pc-linux-gnu/share/../native/bin/ccache gcc -m64"
 
 # LTCC compiler flags.
 LTCFLAGS="-pipe -O2 "

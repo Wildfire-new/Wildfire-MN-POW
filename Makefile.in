@@ -273,6 +273,7 @@ am__relativize = \
   done; \
   reldir="$$dir2"
 DIST_ARCHIVES = $(distdir).tar.gz
+GZIP_ENV = --best
 DIST_TARGETS = dist-gzip
 distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
@@ -525,7 +526,6 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I build-aux/m4
 SUBDIRS = src $(am__append_1)
-GZIP_ENV = "-9n"
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfig_DATA = libwildfireconsensus.pc
 BITCOIND_BIN = $(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
@@ -1105,6 +1105,7 @@ uninstall-am: uninstall-pkgconfigDATA
 .PRECIOUS: Makefile
 
 .PHONY: deploy FORCE
+
 export PYTHONPATH
 
 dist-hook:

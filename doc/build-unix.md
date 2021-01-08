@@ -12,24 +12,8 @@ Run the following commands to install required packages:
 
 ##### Debian/Ubuntu:
 ```bash 
-$ sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 curl libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libboost-all-dev libboost-program-options-dev libminiupnpc-dev libzmq3-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev unzip doxygen cmake libgmp3-dev
-```
-
-Swappfile
-```
- dd if=/dev/zero of=/var/swapfile bs=2048 count=1048576
-    mkswap /var/swapfile
-    swapon /var/swapfile
-    chmod 0600 /var/swapfile
-    chown root:root /var/swapfile
-    echo "/var/swapfile none swap sw 0 0" >> /etc/fstab
-```
-Install Berkeley DB.
-
-```
-sudo add-apt-repository ppa:bitcoin/bitcoin
-sudo apt-get update
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
+$ sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libboost-all-dev libboost-program-options-dev cmake
+sudo apt-get install libminiupnpc-dev libzmq3-dev libprotobuf-dev protobuf-compiler unzip software-properties-common git nano
 ```
 ```
 $ chmod +x configure libtool autogen.sh
