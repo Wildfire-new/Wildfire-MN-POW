@@ -1136,19 +1136,33 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
         but current height to avoid confusion.
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
-{
-    double dDiff;
+{  
+  double dDiff;
     CAmount nSubsidyBase;
 
-    if (nPrevHeight == 0) {
-        nSubsidyBase = 15000000;
-    }
-    else {
-	nSubsidyBase = 50;
+    if (nPrevHeight < 5465) {
+        // Early ages...
+        // 1111/((x+1)^2)
+        nSubsidyBase = (1111.0 / (pow((dDiff+1.0),2.0)));
+        if(nSubsidyBase > 50) nSubsidyBase = 50;
+        else if(nSubsidyBase < 25) nSubsidyBase = 25;
+    } else if (nPrevHeight < 22000 || (dDiff <= 75 && nPrevHeight < 24000)) {
+        // CPU mining era
+        // 11111/(((x+51)/6)^2)
+        nSubsidyBase = (11111.0 / (pow((dDiff+51.0)/6.0,2.0)));
+        if(nSubsidyBase > 50) nSubsidyBase = 50;
+        else if(nSubsidyBase < 25) nSubsidyBase = 25;
+    } else {
+        // GPU/ASIC mining era
+        // 2222222/(((x+2600)/9)^2)
+        nSubsidyBase = (2222222.0 / (pow((dDiff+2600.0)/9.0,2.0)));
+        if(nSubsidyBase > 50) nSubsidyBase = 50;
+        else if(nSubsidyBase < 25) nSubsidyBase = 25;
     }
 
     CAmount nSubsidy = nSubsidyBase * COIN;
 
+    // 
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
         nSubsidy -= nSubsidy/2;
     }
@@ -1161,15 +1175,24 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     // Hard fork to reduce the block reward by 5 extra percent (allowing budget/superblocks)
     CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy * 0.05 : 0;
 
-    return fSuperblockPartOnly ? nSuperblockPart : nSubsidy - nSuperblockPart;
+	return fSuperblockPartOnly ? nSuperblockPart : nSubsidy - nSuperblockPart;
 }
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    CAmount ret = blockValue * 0.95;
-
-    return ret;
+	CAmount ret = blockValue * 0.95;
+	
+	if (nHeight < 22000) {
+	return blockValue * 0.95;
+	} else if (nHeight >= 22000 && nHeight <= 22003) {
+	return blockValue * 0.00;
+	} else {
+	return blockValue * 0.80;
+	
+	return ret;
+	}
 }
+
 
 bool IsInitialBlockDownload()
 {
