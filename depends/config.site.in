@@ -63,7 +63,6 @@ LDFLAGS="-L$depends_prefix/lib $LDFLAGS"
 CC="@CC@"
 CXX="@CXX@"
 OBJC="${CC}"
-CCACHE=$depends_prefix/native/bin/ccache
 PYTHONPATH=$depends_prefix/native/lib/python/dist-packages:$PYTHONPATH
 
 if test -n "@AR@"; then
@@ -97,3 +96,4 @@ fi
 if test -n "@LDFLAGS@"; then
   LDFLAGS="@LDFLAGS@ $LDFLAGS"
 fi
+© 2021 GitHub, Inc.
